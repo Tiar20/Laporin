@@ -5,6 +5,9 @@
                 <div class="col-lg-10">
                     <div class="card auth-card">
                         <div class="card-body p-0">
+                            <?= validation_errors('<div class="alert alert-danger alert-dismissible fade show" role="alert">', '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>') ?>
+
+                            <?= $this->session->flashdata('msg'); ?>
                             <div class="d-flex align-items-center auth-content">
                                 <div class="col-lg-6 bg-primary content-left rounded">
                                     <div class="p-3">
@@ -13,10 +16,6 @@
                                             <img src="<?= base_url('assets/backend/img/Logo-Laporin1.png') ?>" width="200px">
                                         </center>
                                         <hr>
-                                        <?= validation_errors('<div class="alert alert-danger alert-dismissible fade show" role="alert">', '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>') ?>
-
-                                        <?= $this->session->flashdata('msg'); ?>
-
                                         <?= form_open('Auth/LoginController', 'class="user"'); ?>
                                         <div class="row">
                                             <div class="col-lg-10">
